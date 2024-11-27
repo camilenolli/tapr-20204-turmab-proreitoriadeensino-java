@@ -31,13 +31,13 @@ public class DisciplinaAPIController {
     }
 
     @PostMapping 
-    public ResponseEntity<Disciplinas> post (@RequestBody Disciplina disciplina) {
+    public ResponseEntity<Disciplina> post (@RequestBody Disciplina disciplina) {
         if (disciplina == null) {
             return new ResponseEntity <>(HttpStatus.BAD_REQUEST);
         }
         var disciplinaSalvo = service.save(disciplina);
 
-        return new ResponseEntity<Curso>(disciplinaSalvo, HttpStatus.OK);
+        return new ResponseEntity<Disciplina>(disciplinaSalvo, HttpStatus.OK);
     }
 
     @PutMapping("/{id}")
@@ -49,7 +49,7 @@ public class DisciplinaAPIController {
         if (disciplina == null) {
             return new ResponseEntity <>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<Curso>(disciplina, HttpStatus.OK);
+        return new ResponseEntity<Disciplina>(disciplina, HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
@@ -60,9 +60,9 @@ public class DisciplinaAPIController {
         }
         var disciplina = service.delete(id);
         if(disciplina != null){
-            return new ResponseEntity<Curso>(disciplina, HttpStatus.OK);
+            return new ResponseEntity<Disciplina>(disciplina, HttpStatus.OK);
         }
-        return new ResponseEntity<Curso>(disciplina, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<Disciplina>(disciplina, HttpStatus.NOT_FOUND);
     }
 
 }

@@ -1,23 +1,31 @@
 package br.univille.microservproreitoriadeensino.criacao_cursos.entity;
+import org.springframework.data.annotation.Id;
+import com.azure.spring.data.cosmos.core.mapping.Container;
+import com.azure.spring.data.cosmos.core.mapping.GeneratedValue;
+import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
 
+@Container(containerName = "disciplina", autoCreateContainer = true)
 public class Disciplina {
-    private int idDisciplina;
+    @Id
+    @PartitionKey
+    @GeneratedValue
+    private String idDisciplina;
     private int cargaHoraria;
     private String disciplina;
     private int frequencia;
 
-    public Disciplina(int idDisciplina, int cargaHoraria, String disciplina, int frequencia) {
+    public Disciplina(String idDisciplina, int cargaHoraria, String disciplina, int frequencia) {
         this.idDisciplina = idDisciplina;
         this.cargaHoraria = cargaHoraria;
         this.disciplina = disciplina;
         this.frequencia = frequencia;
     }
 
-    public int getIdDisciplina() {
+    public String getIdDisciplina() {
         return idDisciplina;
     }
 
-    public void setIdDisciplina(int idDisciplina) {
+    public void setIdDisciplina(String idDisciplina) {
         this.idDisciplina = idDisciplina;
     }
 
