@@ -1,19 +1,28 @@
 package br.univille.microservproreitoriadeensino.criacao_laboratorios.entity;
 
+import org.springframework.data.annotation.Id;
+import com.azure.spring.data.cosmos.core.mapping.Container;
+import com.azure.spring.data.cosmos.core.mapping.GeneratedValue;
+import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
+
+@Container(containerName = "equipamento", autoCreateContainer = true)
 public class Equipamento {
-    private int idEquipamento;
+    @Id
+    @PartitionKey
+    @GeneratedValue
+    private String idEquipamento;
     private String nomeEquipamento;
 
-    public Equipamento(int idEquipamento, String nomeEquipamento) {
+    public Equipamento(String idEquipamento, String nomeEquipamento) {
         this.idEquipamento = idEquipamento;
         this.nomeEquipamento = nomeEquipamento;
     }
 
-    public int getIdEquipamento() {
+    public String getIdEquipamento() {
         return idEquipamento;
     }
 
-    public void setIdEquipamento(int idEquipamento) {
+    public void setIdEquipamento(String idEquipamento) {
         this.idEquipamento = idEquipamento;
     }
 
@@ -24,5 +33,4 @@ public class Equipamento {
     public void setNomeEquipamento(String nomeEquipamento) {
         this.nomeEquipamento = nomeEquipamento;
     }
-    
 }
