@@ -1,7 +1,7 @@
-package br.univille.microservproreitoriadeensino.criacao_solicitacoes.service;
+package br.univille.microservproreitoriadeensino.solicitacao_professores.service;
 
 import java.util.List;
-import br.univille.microservproreitoriadeensino.criacao_solicitacoes.entity.Solicitacao;
+import br.univille.microservproreitoriadeensino.solicitacao_professores.entity.Solicitacao;
 
 public interface SolicitacaoService {
 

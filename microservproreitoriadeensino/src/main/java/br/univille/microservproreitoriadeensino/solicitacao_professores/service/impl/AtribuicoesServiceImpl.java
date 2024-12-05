@@ -1,4 +1,4 @@
-package br.univille.microservproreitoriadeensino.criacao_atribuicoes.service.impl;
+package br.univille.microservproreitoriadeensino.solicitacao_professores.service.impl;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.univille.microservproreitoriadeensino.criacao_atribuicoes.entity.Atribuicoes;
-import br.univille.microservproreitoriadeensino.criacao_atribuicoes.repository.AtribuicoesRepository;
-import br.univille.microservproreitoriadeensino.criacao_atribuicoes.service.AtribuicoesService;
+import br.univille.microservproreitoriadeensino.solicitacao_professores.entity.Atribuicoes;
+import br.univille.microservproreitoriadeensino.solicitacao_professores.repository.AtribuicoesRepository;
+import br.univille.microservproreitoriadeensino.solicitacao_professores.service.AtribuicoesService;
 
 @Service
 public class AtribuicoesServiceImpl implements AtribuicoesService {
@@ -35,7 +35,7 @@ public class AtribuicoesServiceImpl implements AtribuicoesService {
         var buscaAtribuicaoAntiga = repository.findById(id);
         if (buscaAtribuicaoAntiga.isPresent()) {
             var atribuicaoAntiga = buscaAtribuicaoAntiga.get();
-            atribuicaoAntiga.setDescricao(atribuicoes.getDescricao()); // Substitua pelo método correto
+            atribuicaoAntiga.setIdAtribuicao(atribuicoes.getIdAtribuicao()); // Substitua pelo método correto
             repository.save(atribuicaoAntiga);
             return atribuicaoAntiga;
         }

@@ -1,8 +1,8 @@
-package br.univille.microservproreitoriadeensino.criacao_atribuicoes.repository;
+package br.univille.microservproreitoriadeensino.solicitacao_professores.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import br.univille.microservproreitoriadeensino.criacao_atribuicoes.entity.Atribuicoes;
+import br.univille.microservproreitoriadeensino.solicitacao_professores.entity.Atribuicoes;
 
 @Repository
 public interface AtribuicoesRepository 

@@ -1,7 +1,7 @@
-package br.univille.microservproreitoriadeensino.criacao_atribuicoes.service;
+package br.univille.microservproreitoriadeensino.solicitacao_professores.service;
 
 import java.util.List;
-import br.univille.microservproreitoriadeensino.criacao_atribuicoes.entity.Atribuicoes;
+import br.univille.microservproreitoriadeensino.solicitacao_professores.entity.Atribuicoes;
 
 public interface AtribuicoesService {
 

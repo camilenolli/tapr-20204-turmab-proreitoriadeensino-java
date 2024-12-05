@@ -1,4 +1,4 @@
-package br.univille.microservproreitoriadeensino.criacao_equipamentos.service.impl;
+package br.univille.microservproreitoriadeensino.criacao_laboratorios.service.impl;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.univille.microservproreitoriadeensino.criacao_equipamentos.entity.Equipamento;
-import br.univille.microservproreitoriadeensino.criacao_equipamentos.repository.EquipamentoRepository;
-import br.univille.microservproreitoriadeensino.criacao_equipamentos.service.EquipamentoService;
+import br.univille.microservproreitoriadeensino.criacao_laboratorios.entity.Equipamento;
+import br.univille.microservproreitoriadeensino.criacao_laboratorios.repository.EquipamentoRepository;
+import br.univille.microservproreitoriadeensino.criacao_laboratorios.service.EquipamentoService;
 
 @Service
 public class EquipamentoServiceImpl implements EquipamentoService {
@@ -35,7 +35,7 @@ public class EquipamentoServiceImpl implements EquipamentoService {
         var buscaEquipamentoAntigo = repository.findById(id);
         if (buscaEquipamentoAntigo.isPresent()) {
             var equipamentoAntigo = buscaEquipamentoAntigo.get();
-            equipamentoAntigo.setNome(equipamento.getNome()); // Substitua "setNome" pelo método correto
+            equipamentoAntigo.setNomeEquipamento(equipamento.getNomeEquipamento()); // Substitua "setNome" pelo método correto
             repository.save(equipamentoAntigo);
             return equipamentoAntigo;
         }

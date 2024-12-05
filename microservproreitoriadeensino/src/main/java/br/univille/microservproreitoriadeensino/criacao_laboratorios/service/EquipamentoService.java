@@ -1,7 +1,7 @@
-package br.univille.microservproreitoriadeensino.criacao_equipamentos.service;
+package br.univille.microservproreitoriadeensino.criacao_laboratorios.service;
 
 import java.util.List;
-import br.univille.microservproreitoriadeensino.criacao_equipamentos.entity.Equipamento;
+import br.univille.microservproreitoriadeensino.criacao_laboratorios.entity.Equipamento;
 
 public interface EquipamentoService {
 

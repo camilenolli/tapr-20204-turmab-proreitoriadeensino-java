@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.univille.microservproreitoriadeensino.solicitacao_professores.entity.atribuicoes;
+import br.univille.microservproreitoriadeensino.solicitacao_professores.entity.Atribuicoes;
 import br.univille.microservproreitoriadeensino.solicitacao_professores.service.AtribuicoesService;
 import java.util.List;
 
