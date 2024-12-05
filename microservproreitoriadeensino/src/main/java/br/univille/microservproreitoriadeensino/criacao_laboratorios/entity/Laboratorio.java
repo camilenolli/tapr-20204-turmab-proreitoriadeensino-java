@@ -1,23 +1,30 @@
 package br.univille.microservproreitoriadeensino.criacao_laboratorios.entity;
 
-import java.util.UUID;
+import org.springframework.data.annotation.Id;
+import com.azure.spring.data.cosmos.core.mapping.Container;
+import com.azure.spring.data.cosmos.core.mapping.GeneratedValue;
+import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
 
+@Container(containerName = "laboratorio", autoCreateContainer = true)
 public class Laboratorio {
-    private UUID idLaboratorio;
+    @Id
+    @PartitionKey
+    @GeneratedValue
+    private String idLaboratorio;
     private int numeroLaboratorio;
     private Equipamento equipamento;
 
-    public Laboratorio(UUID idLaboratorio, int numeroLaboratorio, Equipamento equipamento) {
+    public Laboratorio(String idLaboratorio, int numeroLaboratorio, Equipamento equipamento) {
         this.idLaboratorio = idLaboratorio;
         this.numeroLaboratorio = numeroLaboratorio;
         this.equipamento = equipamento;
     }
 
-    public UUID getIdLaboratorio() {
+    public String getIdLaboratorio() {
         return idLaboratorio;
     }
 
-    public void setIdLaboratorio(UUID idLaboratorio) {
+    public void setIdLaboratorio(String idLaboratorio) {
         this.idLaboratorio = idLaboratorio;
     }
 
@@ -36,6 +43,4 @@ public class Laboratorio {
     public void setEquipamento(Equipamento equipamento) {
         this.equipamento = equipamento;
     }
-
-    
 }

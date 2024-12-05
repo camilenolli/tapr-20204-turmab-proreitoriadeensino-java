@@ -1,21 +1,28 @@
 package br.univille.microservproreitoriadeensino.solicitacao_professores.entity;
 
-import java.util.UUID;
+import org.springframework.data.annotation.Id;
+import com.azure.spring.data.cosmos.core.mapping.Container;
+import com.azure.spring.data.cosmos.core.mapping.GeneratedValue;
+import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
 
+@Container(containerName = "solicitacao", autoCreateContainer = true)
 public class Solicitacao {
-    private UUID idSolicitacao;
+    @Id
+    @PartitionKey
+    @GeneratedValue
+    private String idSolicitacao;
     private Atribuicoes atribuicoes;
 
-    public Solicitacao(UUID idSolicitacao, Atribuicoes atribuicoes) {
+    public Solicitacao(String idSolicitacao, Atribuicoes atribuicoes) {
         this.idSolicitacao = idSolicitacao;
         this.atribuicoes = atribuicoes;
     }
 
-    public UUID getIdSolicitacao() {
+    public String getIdSolicitacao() {
         return idSolicitacao;
     }
 
-    public void setIdSolicitacao(UUID idSolicitacao) {
+    public void setIdSolicitacao(String idSolicitacao) {
         this.idSolicitacao = idSolicitacao;
     }
 
